@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>לאה ניסנוב - יועצת משכנתאות בכירה | ייעוץ מקצועי</title>
-    <meta name="description" content="לאה ניסנוב - יועצת משכנתאות בכירה מציעה ייעוץ מקצועי ואישי. שיתוף עם 4 בנקים מובילים: לאומי, הפועלים, דיסקונט, איגוד. צור קשר עכשיו!">
-    <meta name="keywords" content="יועצת משכנתאות, ייעוץ משכנתאות, משכנתא, בנק לאומי, בנק הפועלים, דיסקונט, איגוד, לאה ניסנוב">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>לאה ניסנוב - יועצת משכנתאות בכירה | ייעוץ מקצועי</title>
+<meta content="לאה ניסנוב - יועצת משכנתאות בכירה מציעה ייעוץ מקצועי ואישי. שיתוף עם 8 בנקים מובילים: לאומי, הפועלים, דיסקונט, איגוד, מזרחי-טפחות, פאגי, אוצר החייל, מרכנתיל. צור קשר עכשיו!" name="description"/>
+<meta content="יועצת משכנתאות, ייעוץ משכנתאות, משכנתא, בנק לאומי, בנק הפועלים, דיסקונט, איגוד, מזרחי-טפחות, פאגי, אוצר החייל, מרכנתיל, לאה ניסנוב" name="keywords"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
         * {
             font-family: 'Heebo', Arial, sans-serif;
         }
@@ -40,6 +41,7 @@
             box-shadow: 2px 2px 3px #999;
             z-index: 100;
             transition: all 0.3s ease;
+            animation: pulse 2s infinite;
         }
         .whatsapp-float:hover {
             background-color: #128c7e;
@@ -48,38 +50,41 @@
         .whatsapp-float i {
             margin-top: 16px;
         }
-        .logo-container {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        .logo-placeholder {
+            width: 200px;
+            height: 150px;
+            background-color: #ffffff;
             border: 2px solid #d4af37;
             border-radius: 15px;
-            padding: 10px;
             display: inline-block;
             margin-bottom: 20px;
         }
-        .logo-text {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1;
-            margin: 0;
-        }
-        .logo-l {
-            color: #1a1a1a;
-        }
-        .logo-n {
-            color: #d4af37;
-        }
-        .logo-subtitle {
-            font-size: 0.9rem;
-            color: #1a1a1a;
-            margin-top: 5px;
-            text-align: center;
-        }
         .card-hover {
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
         }
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .btn-gold {
             background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #d4af37 100%);
@@ -104,15 +109,36 @@
             object-fit: contain;
             filter: grayscale(20%);
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
         }
         .bank-logo:hover {
             filter: grayscale(0%);
             transform: scale(1.1);
         }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
         .testimonial-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             border-left: 5px solid #d4af37;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInRight 0.8s ease forwards;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
         .form-input {
             border: 2px solid #e5e7eb;
@@ -134,425 +160,450 @@
             color: #1a1a1a;
             font-weight: 600;
         }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Animation delays for staggered effect */
+        .card-hover:nth-child(1) { animation-delay: 0.1s; }
+        .card-hover:nth-child(2) { animation-delay: 0.2s; }
+        .card-hover:nth-child(3) { animation-delay: 0.3s; }
+        .card-hover:nth-child(4) { animation-delay: 0.4s; }
+        .card-hover:nth-child(5) { animation-delay: 0.5s; }
+        .card-hover:nth-child(6) { animation-delay: 0.6s; }
+        
+        .testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        .bank-logo:nth-child(1) { animation-delay: 0.1s; }
+        .bank-logo:nth-child(2) { animation-delay: 0.2s; }
+        .bank-logo:nth-child(3) { animation-delay: 0.3s; }
+        .bank-logo:nth-child(4) { animation-delay: 0.4s; }
+        .bank-logo:nth-child(5) { animation-delay: 0.5s; }
+        .bank-logo:nth-child(6) { animation-delay: 0.6s; }
+        .bank-logo:nth-child(7) { animation-delay: 0.7s; }
+        .bank-logo:nth-child(8) { animation-delay: 0.8s; }
     </style>
 </head>
 <body class="bg-gray-50">
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/972548426404?text=שלום לאה, אני מעוניין/ת בייעוץ משכנתאות" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Header Section -->
-    <header class="gradient-bg text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <div class="logo-container mx-auto">
-                <div class="logo-text">
-                    <span class="logo-l">L</span><span class="logo-n">N</span>
-                </div>
-                <div class="logo-subtitle">לאה ניסנוב</div>
-                <div class="logo-subtitle" style="font-size: 0.7rem;">ייעוץ משכנתאות</div>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+<!-- WhatsApp Float Button -->
+<a class="whatsapp-float" href="https://wa.me/972548426404?text=שלום לאה, אני מעוניין/ת בייעוץ משכנתאות" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+<!-- Header Section -->
+<header class="gradient-bg text-white py-16">
+<div class="container mx-auto px-4 text-center">
+<div class="logo-placeholder mx-auto"></div>
+<h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 לאה ניסנוב - יועצת משכנתאות בכירה
             </h1>
-            <p class="text-xl md:text-2xl mb-8 gold-gradient">
+<p class="text-xl md:text-2xl mb-8 gold-gradient">
                 ייעוץ מקצועי ואישי לכל לקוח ולקוחה
             </p>
-            <p class="text-lg mb-8 max-w-4xl mx-auto leading-relaxed">
-                עם שנות ניסיון רבות בתחום המשכנתאות, אני מציעה ללקוחותיי שירות מקצועי, אישי ומסור. 
+<p class="text-lg mb-8 max-w-4xl mx-auto leading-relaxed">
+                עם 10 שנות ניסיון בתחום המשכנתאות, אני מציעה ללקוחותיי שירות מקצועי, אישי ומסור. 
                 מתמחה במציאת הפתרון המשכנתאי הטוב ביותר עבורכם, תוך שיתוף פעולה עם הבנקים המובילים בישראל.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="btn-gold px-8 py-4 rounded-full text-lg font-semibold inline-block">
-                    <i class="fas fa-phone-alt ml-2"></i>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="btn-gold px-8 py-4 rounded-full text-lg font-semibold inline-block" href="#contact">
+<i class="fas fa-phone-alt ml-2"></i>
                     צור קשר עכשיו
                 </a>
-                <a href="#services" class="bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-full text-lg font-semibold inline-block transition-all">
-                    <i class="fas fa-info-circle ml-2"></i>
+<a class="bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-full text-lg font-semibold inline-block transition-all" href="#services">
+<i class="fas fa-info-circle ml-2"></i>
                     למידע נוסף
                 </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Professional Photo Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/eeea81fa6130a2200adfa9c2bc618ea4" alt="לאה ניסנוב - יועצת משכנתאות בכירה" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto">
-                </div>
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">מי אני?</h2>
-                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+</div>
+</div>
+</header>
+<!-- Professional Photo Section -->
+<section class="py-16 bg-white fade-in-section">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="lg:w-1/2">
+<img alt="לאה ניסנוב - יועצת משכנתאות בכירה" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto" src="https://page.gensparksite.com/v1/base64_upload/eeea81fa6130a2200adfa9c2bc618ea4"/>
+</div>
+<div class="lg:w-1/2">
+<h2 class="text-3xl font-bold text-gray-800 mb-6">מי אני?</h2>
+<p class="text-lg text-gray-700 mb-6 leading-relaxed">
                         שמי לאה ניסנוב, ואני יועצת משכנתאות בכירה עם ניסיון רב בתחום הבנקאות והמשכנתאות. 
                         במהלך השנים ליוויתי מאות משפחות בתהליך קבלת המשכנתא המתאימה ביותר עבורם.
                     </p>
-                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+<p class="text-lg text-gray-700 mb-6 leading-relaxed">
                         המטרה שלי היא לספק לכם שירות מקצועי, אמין ואישי, תוך הקשבה לצרכים שלכם ומציאת הפתרון הכלכלי הטוב ביותר עבור המשפחה שלכם.
                     </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="text-center p-4 bg-gray-50 rounded-lg">
-                            <div class="text-2xl font-bold text-yellow-600">15+</div>
-                            <div class="text-sm text-gray-600">שנות ניסיון</div>
-                        </div>
-                        <div class="text-center p-4 bg-gray-50 rounded-lg">
-                            <div class="text-2xl font-bold text-yellow-600">500+</div>
-                            <div class="text-sm text-gray-600">לקוחות מרוצים</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-gray-800">השירותים שלי</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="text-4xl text-yellow-600 mb-4">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">משכנתא לרכישת דירה</h3>
-                    <p class="text-gray-600">ייעוץ מקצועי לרכישת בית ראשון או נוסף, עם מציאת התנאים הטובים ביותר</p>
-                </div>
-                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="text-4xl text-yellow-600 mb-4">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">מחזור משכנתא</h3>
-                    <p class="text-gray-600">בדיקה והשוואה של תנאים קיימים מול הצעות חדשות לחסכון משמעותי</p>
-                </div>
-                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="text-4xl text-yellow-600 mb-4">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">ייעוץ השקעות נדל"ן</h3>
-                    <p class="text-gray-600">הכוונה מקצועית להשקעה בנדל"ן ומציאת המימון המתאים</p>
-                </div>
-                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="text-4xl text-yellow-600 mb-4">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">בדיקה פיננסית</h3>
-                    <p class="text-gray-600">ניתוח מקיף של המצב הפיננסי וקביעת יכולת החזר מיטבית</p>
-                </div>
-                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="text-4xl text-yellow-600 mb-4">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">ליווי אישי</h3>
-                    <p class="text-gray-600">ליווי צמוד לכל תהליך קבלת המשכנתא מהתחלה ועד הסוף</p>
-                </div>
-                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="text-4xl text-yellow-600 mb-4">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">הכנת מסמכים</h3>
-                    <p class="text-gray-600">עזרה בהכנה וארגון של כל המסמכים הנדרשים לבנק</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Banks Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-gray-800">הבנקים איתם אני עובדת</h2>
-            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-                אני שומרת על קשרים מקצועיים עם ארבעת הבנקים המובילים בישראל, 
+<div class="grid grid-cols-2 gap-4">
+<div class="text-center p-4 bg-gray-50 rounded-lg">
+<div class="text-2xl font-bold text-yellow-600">10+</div>
+<div class="text-sm text-gray-600">שנות ניסיון</div>
+</div>
+<div class="text-center p-4 bg-gray-50 rounded-lg">
+<div class="text-2xl font-bold text-yellow-600">500+</div>
+<div class="text-sm text-gray-600">לקוחות מרוצים</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-16 bg-gray-100 fade-in-section" id="services">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-gray-800">השירותים שלי</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+<div class="text-4xl text-yellow-600 mb-4">
+<i class="fas fa-home"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">משכנתא לרכישת דירה</h3>
+<p class="text-gray-600">ייעוץ מקצועי לרכישת בית ראשון או נוסף, עם מציאת התנאים הטובים ביותר</p>
+</div>
+<div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+<div class="text-4xl text-yellow-600 mb-4">
+<i class="fas fa-sync-alt"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">מחזור משכנתא</h3>
+<p class="text-gray-600">בדיקה והשוואה של תנאים קיימים מול הצעות חדשות לחסכון משמעותי</p>
+</div>
+<div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+<div class="text-4xl text-yellow-600 mb-4">
+<i class="fas fa-chart-line"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">ייעוץ השקעות נדל"ן</h3>
+<p class="text-gray-600">הכוונה מקצועית להשקעה בנדל"ן ומציאת המימון המתאים</p>
+</div>
+<div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+<div class="text-4xl text-yellow-600 mb-4">
+<i class="fas fa-calculator"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">בדיקה פיננסית</h3>
+<p class="text-gray-600">ניתוח מקיף של המצב הפיננסי וקביעת יכולת החזר מיטבית</p>
+</div>
+<div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+<div class="text-4xl text-yellow-600 mb-4">
+<i class="fas fa-handshake"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">ליווי אישי</h3>
+<p class="text-gray-600">ליווי צמוד לכל תהליך קבלת המשכנתא מהתחלה ועד הסוף</p>
+</div>
+<div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+<div class="text-4xl text-yellow-600 mb-4">
+<i class="fas fa-file-contract"></i>
+</div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">הכנת מסמכים</h3>
+<p class="text-gray-600">עזרה בהכנה וארגון של כל המסמכים הנדרשים לבנק</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Banks Section -->
+<section class="py-16 bg-white fade-in-section">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-gray-800">הבנקים איתם אני עובדת</h2>
+<p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+                אני שומרת על קשרים מקצועיים עם שמונה הבנקים המובילים בישראל, 
                 מה שמאפשר לי למצוא עבורכם את התנאים הטובים ביותר
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
-                <div class="text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/he/thumb/3/36/BankLeumiLogo.svg/2560px-BankLeumiLogo.svg.png" alt="בנק לאומי" class="bank-logo mx-auto mb-4">
-                    <h3 class="font-semibold text-gray-800">בנק לאומי</h3>
-                </div>
-                <div class="text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Bank_hapoalim_logo_heb18.svg/2560px-Bank_hapoalim_logo_heb18.svg.png" alt="בנק הפועלים" class="bank-logo mx-auto mb-4">
-                    <h3 class="font-semibold text-gray-800">בנק הפועלים</h3>
-                </div>
-                <div class="text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/he/thumb/7/7e/DiscountBank.svg/2560px-DiscountBank.svg.png" alt="בנק דיסקונט" class="bank-logo mx-auto mb-4">
-                    <h3 class="font-semibold text-gray-800">בנק דיסקונט</h3>
-                </div>
-                <div class="text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/he/thumb/3/3e/Bank_Igud_Logo.svg/1200px-Bank_Igud_Logo.svg.png" alt="בנק איגוד" class="bank-logo mx-auto mb-4">
-                    <h3 class="font-semibold text-gray-800">בנק איגוד</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Meeting Photo -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">למה לבחור בי?</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="text-yellow-600 ml-3 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">ניסיון רב כיועצת משכנתאות בכירה</p>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="text-yellow-600 ml-3 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">שיתוף פעולה עם כל הבנקים המובילים</p>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="text-yellow-600 ml-3 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">ליווי אישי וצמוד לכל התהליך</p>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="text-yellow-600 ml-3 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">חסכון משמעותי בעלויות המשכנתא</p>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="text-yellow-600 ml-3 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">זמינות גבוהה ומענה מהיר</p>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="text-yellow-600 ml-3 mt-1">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">שירות מקצועי ואמין בכל שלב</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <img src="https://page.gensparksite.com/v1/base64_upload/0eccaf5a3b8e16653ffba15fd2d3cdd9" alt="פגישה עסקית מקצועית" class="rounded-2xl shadow-2xl w-full">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-gray-800">לקוחות ממליצים</h2>
-            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="testimonial-card p-6 rounded-2xl">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-600 text-2xl ml-3">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">מלכה וישראל</h4>
-                            <div class="text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
+<div class="text-center">
+<img alt="בנק לאומי" class="bank-logo mx-auto mb-4" src="https://upload.wikimedia.org/wikipedia/he/thumb/3/36/BankLeumiLogo.svg/2560px-BankLeumiLogo.svg.png"/>
+<h3 class="font-semibold text-gray-800">בנק לאומי</h3>
+</div>
+<div class="text-center">
+<img alt="בנק הפועלים" class="bank-logo mx-auto mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Bank_hapoalim_logo_heb18.svg/2560px-Bank_hapoalim_logo_heb18.svg.png"/>
+<h3 class="font-semibold text-gray-800">בנק הפועלים</h3>
+</div>
+<div class="text-center">
+<img alt="בנק דיסקונט" class="bank-logo mx-auto mb-4" src="https://upload.wikimedia.org/wikipedia/he/thumb/7/7e/DiscountBank.svg/2560px-DiscountBank.svg.png"/>
+<h3 class="font-semibold text-gray-800">בנק דיסקונט</h3>
+</div>
+<div class="text-center">
+<img alt="בנק איגוד" class="bank-logo mx-auto mb-4" src="https://upload.wikimedia.org/wikipedia/he/thumb/3/3e/Bank_Igud_Logo.svg/1200px-Bank_Igud_Logo.svg.png"/>
+<h3 class="font-semibold text-gray-800">בנק איגוד</h3>
+</div>
+<div class="text-center">
+<img alt="בנק מזרחי-טפחות" class="bank-logo mx-auto mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/%D7%9C%D7%95%D7%92%D7%95_%D7%A9%D7%9C_%D7%91%D7%A0%D7%A7_%D7%9E%D7%96%D7%A8%D7%97%D7%99-%D7%98%D7%A4%D7%97%D7%95%D7%AA.svg/2560px-%D7%9C%D7%95%D7%92%D7%95_%D7%A9%D7%9C_%D7%91%D7%A0%D7%A7_%D7%9E%D7%96%D7%A8%D7%97%D7%99-%D7%98%D7%A4%D7%97%D7%95%D7%AA.svg.png"/>
+<h3 class="font-semibold text-gray-800">בנק מזרחי-טפחות</h3>
+</div>
+<div class="text-center">
+<img alt="בנק פאגי" class="bank-logo mx-auto mb-4" src="https://upload.wikimedia.org/wikipedia/he/thumb/1/1f/%D7%91%D7%A0%D7%A7_%D7%A4%D7%90%D7%92%D7%99.svg/2560px-%D7%91%D7%A0%D7%A7_%D7%A4%D7%90%D7%92%D7%99.svg.png"/>
+<h3 class="font-semibold text-gray-800">בנק פאגי</h3>
+</div>
+<div class="text-center">
+<img alt="בנק אוצר החייל" class="bank-logo mx-auto mb-4" src="https://www.bankotsar.co.il/media/zsrdgl4i/logos_rgb_09.png"/>
+<h3 class="font-semibold text-gray-800">בנק אוצר החייל</h3>
+</div>
+<div class="text-center">
+<img alt="בנק מרכנתיל" class="bank-logo mx-auto mb-4" src="https://upload.wikimedia.org/wikipedia/he/thumb/c/c7/Mercantile.svg/2560px-Mercantile.svg.png"/>
+<h3 class="font-semibold text-gray-800">בנק מרכנתיל</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Meeting Photo -->
+<section class="py-16 bg-gray-100 fade-in-section">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="lg:w-1/2">
+<h2 class="text-3xl font-bold text-gray-800 mb-6">למה לבחור בי?</h2>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="text-yellow-600 ml-3 mt-1">
+<i class="fas fa-check-circle"></i>
+</div>
+<p class="text-gray-700">ניסיון רב כיועצת משכנתאות בכירה</p>
+</div>
+<div class="flex items-start">
+<div class="text-yellow-600 ml-3 mt-1">
+<i class="fas fa-check-circle"></i>
+</div>
+<p class="text-gray-700">שיתוף פעולה עם כל הבנקים המובילים</p>
+</div>
+<div class="flex items-start">
+<div class="text-yellow-600 ml-3 mt-1">
+<i class="fas fa-check-circle"></i>
+</div>
+<p class="text-gray-700">ליווי אישי וצמוד לכל התהליך</p>
+</div>
+<div class="flex items-start">
+<div class="text-yellow-600 ml-3 mt-1">
+<i class="fas fa-check-circle"></i>
+</div>
+<p class="text-gray-700">חסכון משמעותי בעלויות המשכנתא</p>
+</div>
+<div class="flex items-start">
+<div class="text-yellow-600 ml-3 mt-1">
+<i class="fas fa-check-circle"></i>
+</div>
+<p class="text-gray-700">זמינות גבוהה ומענה מהיר</p>
+</div>
+<div class="flex items-start">
+<div class="text-yellow-600 ml-3 mt-1">
+<i class="fas fa-check-circle"></i>
+</div>
+<p class="text-gray-700">שירות מקצועי ואמין בכל שלב</p>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2">
+<img alt="פגישה עסקית מקצועית" class="rounded-2xl shadow-2xl w-full" src="https://page.gensparksite.com/v1/base64_upload/0eccaf5a3b8e16653ffba15fd2d3cdd9"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-16 bg-white fade-in-section">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-gray-800">לקוחות ממליצים</h2>
+<div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="testimonial-card p-6 rounded-2xl">
+<div class="flex items-center mb-4">
+<div class="text-yellow-600 text-2xl ml-3">
+<i class="fas fa-quote-right"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">מלכה וישראל</h4>
+<div class="text-yellow-500">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-700 italic">
                         "ממליצים בחום. תודה על טיפול מקצועי אמין מהיר ואיכותי. 
                         היה לנו לעונג להכיר ולקבל ממך שרות. תודה שחווית אותנו בתהליך 
                         ותודה על הישג מצויין שדאגת להשיג עבורינו."
                     </p>
-                </div>
-                <div class="testimonial-card p-6 rounded-2xl">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-600 text-2xl ml-3">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">שלמה</h4>
-                            <div class="text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
+</div>
+<div class="testimonial-card p-6 rounded-2xl">
+<div class="flex items-center mb-4">
+<div class="text-yellow-600 text-2xl ml-3">
+<i class="fas fa-quote-right"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">שלמה</h4>
+<div class="text-yellow-500">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-700 italic">
                         "ממליץ בחום, קיבלתי ייעוץ והכוונה מקצועית תוך הקשבה ונכונות לעזור. 
                         תודה רבה על חסכון עצום במשכנתא."
                     </p>
-                </div>
-                <div class="testimonial-card p-6 rounded-2xl">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-600 text-2xl ml-3">
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">שמחה</h4>
-                            <div class="text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
+</div>
+<div class="testimonial-card p-6 rounded-2xl">
+<div class="flex items-center mb-4">
+<div class="text-yellow-600 text-2xl ml-3">
+<i class="fas fa-quote-right"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">שמחה</h4>
+<div class="text-yellow-500">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-700 italic">
                         "תודה לך על כל הליווי ובאמת שלא היה לי מושג בהתחלה כמה שזה חשוב 
                         וכמה חסכון כספי עצום חסכנו. ובאמת לאה היא אדם כל כך אכפתי ואנושי 
                         שאני חשה הכרת תודה רבה. ישר כוח!"
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-gray-800">צור קשר לייעוץ חינם</h2>
-            <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12">
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">שלח/י פרטים ואחזור אליך</h3>
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="text" placeholder="שם פרטי" class="form-input w-full" required>
-                            <input type="text" placeholder="שם משפחה" class="form-input w-full" required>
-                        </div>
-                        <input type="tel" placeholder="מספר טלפון" class="form-input w-full" required>
-                        <input type="email" placeholder="כתובת אימייל" class="form-input w-full" required>
-                        <select class="form-input w-full" required>
-                            <option value="">בחר/י את סוג הפנייה</option>
-                            <option value="first-time">רכישת דירה ראשונה</option>
-                            <option value="investment">דירה להשקעה</option>
-                            <option value="refinance">מחזור משכנתא קיימת</option>
-                            <option value="consultation">ייעוץ כללי</option>
-                        </select>
-                        <textarea placeholder="הודעה נוספת (אופציונלי)" rows="4" class="form-input w-full resize-none"></textarea>
-                        <button type="submit" class="btn-gold w-full py-4 rounded-lg text-lg font-semibold">
-                            <i class="fas fa-paper-plane ml-2"></i>
-                            שלח פרטים
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-16 bg-gray-100 fade-in-section" id="contact">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-gray-800">צור קשר לייעוץ חינם</h2>
+<div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12">
+<div class="bg-white p-8 rounded-2xl shadow-lg">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">שלח/י פרטים ואחזור אליך</h3>
+<form class="space-y-6" id="contactForm">
+<div class="grid grid-cols-2 gap-4">
+<input class="form-input w-full" id="firstName" placeholder="שם פרטי" required="" type="text"/>
+<input class="form-input w-full" id="lastName" placeholder="שם משפחה" required="" type="text"/>
+</div>
+<input class="form-input w-full" id="phone" placeholder="מספר טלפון" required="" type="tel"/>
+<input class="form-input w-full" id="email" placeholder="כתובת אימייל" required="" type="email"/>
+<select class="form-input w-full" id="inquiryType" required="">
+<option value="">בחר/י את סוג הפנייה</option>
+<option value="רכישת דירה ראשונה">רכישת דירה ראשונה</option>
+<option value="דירה להשקעה">דירה להשקעה</option>
+<option value="מחזור משכנתא קיימת">מחזור משכנתא קיימת</option>
+<option value="ייעוץ כללי">ייעוץ כללי</option>
+</select>
+<textarea class="form-input w-full resize-none" id="message" placeholder="הודעה נוספת (אופציונלי)" rows="4"></textarea>
+<button class="btn-gold w-full py-4 rounded-lg text-lg font-semibold" type="submit">
+<i class="fas fa-paper-plane ml-2"></i>
+                            שלח פרטים לווטסאפ
                         </button>
-                    </form>
-                </div>
-                <div class="space-y-6">
-                    <div class="contact-info p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold text-white mb-6">פרטי יצירת קשר</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-phone text-yellow-400 text-xl ml-4"></i>
-                                <div>
-                                    <p class="text-white font-semibold">טלפון</p>
-                                    <a href="tel:0548426404" class="text-yellow-400 hover:text-yellow-300">054-8426404</a>
-                                </div>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope text-yellow-400 text-xl ml-4"></i>
-                                <div>
-                                    <p class="text-white font-semibold">אימייל</p>
-                                    <a href="/cdn-cgi/l/email-protection#ec8083d9d8d4d8dedad8dcd8ac8b818d8580c28f8381" class="text-yellow-400 hover:text-yellow-300"><span class="__cf_email__" data-cfemail="99f5f6acada1adabafada9add9fef4f8f0f5b7faf6f4">[email&#160;protected]</span></a>
-                                </div>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fab fa-whatsapp text-yellow-400 text-xl ml-4"></i>
-                                <div>
-                                    <p class="text-white font-semibold">WhatsApp</p>
-                                    <a href="https://wa.me/972548426404" class="text-yellow-400 hover:text-yellow-300">שלח הודעה בWhatsApp</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="working-hours p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold mb-4">שעות פעילות</h3>
-                        <div class="space-y-2">
-                            <div class="flex justify-between">
-                                <span class="font-semibold">ימים א' - ה':</span>
-                                <span>09:00 - 18:00</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-semibold">ייעוץ בערבים:</span>
-                                <span>בתיאום מראש</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-semibold">סופי שבוע:</span>
-                                <span>לא עובדת</span>
-                            </div>
-                            <div class="mt-4 p-4 bg-black bg-opacity-20 rounded-lg">
-                                <p class="text-sm">
-                                    <i class="fas fa-info-circle ml-2"></i>
+</form>
+</div>
+<div class="space-y-6">
+<div class="contact-info p-8 rounded-2xl">
+<h3 class="text-2xl font-bold text-white mb-6">פרטי יצירת קשר</h3>
+<div class="space-y-4">
+<div class="flex items-center">
+<i class="fas fa-phone text-yellow-400 text-xl ml-4"></i>
+<div>
+<p class="text-white font-semibold">טלפון</p>
+<a class="text-yellow-400 hover:text-yellow-300" href="tel:0548426404">054-8426404</a>
+</div>
+</div>
+<div class="flex items-center">
+<i class="fas fa-envelope text-yellow-400 text-xl ml-4"></i>
+<div>
+<p class="text-white font-semibold">אימייל</p>
+<a class="text-yellow-400 hover:text-yellow-300" href="/cdn-cgi/l/email-protection#96faa6a3a2aea4a0a2a6a2d6f1fbf7fffab8f5f9fb"><span class="__cf_email__" data-cfemail="026e3237363a303436323642656f636b6e2c616d6f">[email protected]</span></a>
+</div>
+</div>
+<div class="flex items-center">
+<i class="fab fa-whatsapp text-yellow-400 text-xl ml-4"></i>
+<div>
+<p class="text-white font-semibold">WhatsApp</p>
+<a class="text-yellow-400 hover:text-yellow-300" href="https://wa.me/972548426404">שלח הודעה בWhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+<div class="working-hours p-8 rounded-2xl">
+<h3 class="text-2xl font-bold mb-4">שעות פעילות</h3>
+<div class="space-y-2">
+<div class="flex justify-between">
+<span class="font-semibold">ימים א' - ה':</span>
+<span>09:00 - 18:00</span>
+</div>
+<div class="flex justify-between">
+<span class="font-semibold">ייעוץ בערבים:</span>
+<span>בתיאום מראש</span>
+</div>
+<div class="flex justify-between">
+<span class="font-semibold">סופי שבוע:</span>
+<span>לא עובדת</span>
+</div>
+<div class="mt-4 p-4 bg-black bg-opacity-20 rounded-lg">
+<p class="text-sm">
+<i class="fas fa-info-circle ml-2"></i>
                                     זמינה לשיחות דחופות גם מחוץ לשעות הפעילות
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="gradient-bg text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
-                <div class="logo-container mx-auto">
-                    <div class="logo-text">
-                        <span class="logo-l">L</span><span class="logo-n">N</span>
-                    </div>
-                    <div class="logo-subtitle">לאה ניסנוב</div>
-                    <div class="logo-subtitle" style="font-size: 0.7rem;">ייעוץ משכנתאות</div>
-                </div>
-                <h3 class="text-2xl font-bold mb-4">לאה ניסנוב - יועצת משכנתאות בכירה</h3>
-                <p class="text-lg gold-gradient mb-6">ייעוץ מקצועי ואישי לכל לקוח ולקוחה</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div class="text-center">
-                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">השירותים שלנו</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>משכנתא לרכישת דירה</li>
-                        <li>מחזור משכנתא</li>
-                        <li>ייעוץ השקעות נדל"ן</li>
-                        <li>ליווי אישי מקצועי</li>
-                    </ul>
-                </div>
-                <div class="text-center">
-                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">הבנקים שלנו</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>בנק לאומי</li>
-                        <li>בנק הפועלים</li>
-                        <li>בנק דיסקונט</li>
-                        <li>בנק איגוד</li>
-                    </ul>
-                </div>
-                <div class="text-center">
-                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">יצירת קשר</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>054-8426404</li>
-                        <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="563a3963626e62646062666216313b373f3a7835393b">[email&#160;protected]</a></li>
-                        <li>ימים א' - ה' | 09:00-18:00</li>
-                        <li>ייעוץ בערבים בתיאום</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-600 pt-8 text-center">
-                <p class="text-sm text-gray-300">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="gradient-bg text-white py-12">
+<div class="container mx-auto px-4">
+<div class="text-center mb-8">
+<div class="logo-placeholder mx-auto"><img alt="לאה ניסנוב - יועצת משכנתאות" class="mx-auto w-48 h-auto rounded-lg" src="logo.jpg"/></div>
+<h3 class="text-2xl font-bold mb-4">לאה ניסנוב - יועצת משכנתאות בכירה</h3>
+<p class="text-lg gold-gradient mb-6">ייעוץ מקצועי ואישי לכל לקוח ולקוחה</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 mb-8">
+<div class="text-center">
+<h4 class="text-lg font-semibold mb-4 text-yellow-400">השירותים שלנו</h4>
+<ul class="space-y-2 text-sm">
+<li>משכנתא לרכישת דירה</li>
+<li>מחזור משכנתא</li>
+<li>ייעוץ השקעות נדל"ן</li>
+<li>ליווי אישי מקצועי</li>
+</ul>
+</div>
+<div class="text-center">
+<h4 class="text-lg font-semibold mb-4 text-yellow-400">הבנקים שלנו</h4>
+<ul class="space-y-2 text-sm">
+<li>בנק לאומי</li>
+<li>בנק הפועלים</li>
+<li>בנק דיסקונט</li>
+<li>בנק איגוד</li>
+<li>בנק מזרחי-טפחות</li>
+<li>בנק פאגי</li>
+<li>בנק אוצר החייל</li>
+<li>בנק מרכנתיל</li>
+</ul>
+</div>
+<div class="text-center">
+<h4 class="text-lg font-semibold mb-4 text-yellow-400">יצירת קשר</h4>
+<ul class="space-y-2 text-sm">
+<li>054-8426404</li>
+<li><a class="__cf_email__" data-cfemail="ec80dcd9d8d4dedad8dcd8ac8b818d8580c28f8381" href="/cdn-cgi/l/email-protection">[email protected]</a></li>
+<li>ימים א' - ה' | 09:00-18:00</li>
+<li>ייעוץ בערבים בתיאום</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-600 pt-8 text-center">
+<p class="text-sm text-gray-300">
                     © 2024 לאה ניסנוב - יועצת משכנתאות בכירה. כל הזכויות שמורות.
                 </p>
-                <p class="text-xs text-gray-400 mt-2">
+<p class="text-xs text-gray-400 mt-2">
                     אתר זה נועד למטרות מידע בלבד ואינו מהווה ייעוץ פיננסי או משפטי
                 </p>
-            </div>
-        </div>
-    </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+</div>
+</div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -567,13 +618,48 @@
             });
         });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // WhatsApp Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('תודה! פרטייך נשלחו בהצלחה. אחזור אליך בהקדם האפשרי.');
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const inquiryType = document.getElementById('inquiryType').value;
+            const message = document.getElementById('message').value;
+            
+            let whatsappMessage = `*פנייה חדשה מהאתר* 📋\n\n`;
+            whatsappMessage += `*שם מלא:* ${firstName} ${lastName}\n`;
+            whatsappMessage += `*טלפון:* ${phone}\n`;
+            whatsappMessage += `*אימייל:* ${email}\n`;
+            whatsappMessage += `*סוג פנייה:* ${inquiryType}\n`;
+            
+            if (message.trim()) {
+                whatsappMessage += `*הודעה נוספת:* ${message}\n`;
+            }
+            
+            whatsappMessage += `\n*נשלח מהאתר של לאה ניסנוב* 🏠`;
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappURL = `https://wa.me/972548426404?text=${encodedMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+            
+            // Show success message
+            const button = e.target.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check ml-2"></i>נשלח בהצלחה!';
+            button.style.background = '#28a745';
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = '';
+                this.reset();
+            }, 3000);
         });
 
-        // Add animation on scroll
+        // Fade in sections on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -582,29 +668,23 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        // Observe all cards and sections
-        document.querySelectorAll('.card-hover, .testimonial-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        // Observe all fade-in sections
+        document.querySelectorAll('.fade-in-section').forEach(el => {
             observer.observe(el);
         });
     </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9777b84299bbbbfd","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+<script crossorigin="anonymous" data-cf-beacon='{"rayId":"977da01009e01c3c","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' defer="" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"></script>
 </body>
 </html>
-    <script id="html_badge_script1">
+<script id="html_badge_script1">
         window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDgawKGMW%2Fpfildkp%2FJdO8U0bjQN%2FnPcG7rcWUzCyOuSQnRBhIslesgbct3Bj8Oy0FnsaLx4sXctMDWz2XSnCaNFmE8eJA9O7%2BUy%2BzRmHeEE8fFptTsN%2BzIB3W1o5%2F6NKjGMo1CQMqXxSQOQ0G4ruh7LmNF29qRGvMdGWbi1bLjCLUsfwlGObUo0s13H2RYJnrsCCr2r69jHe36xTjaebda0QCEbnueYdNqLYMv51YGGF1bN41SP3Csfvdj9Pb3w%2BNKuyrll86DanO%2ByhgiUPe0pZVqRHP%2BaWR0s8yNDebq4fsJSE7zAXN%2BJkd4%2Fq85o%2BSJJeAYY3Yz5JKgBOe6VCYnc%2BIXl7p5X8X0adG1HtjjdijoYATbN9Ck4hZrQqN9Di%2BkPhdLmd%2FbEsQ7nBi3NuMpNV5doXqyUhs0Au9hPpCcdzI4FMdiezq7CON2SG0rSo84%2FeluZEySvFevabiv2xFvyNZ76xOdvSWZ6iLV3yJ%2BcaHt00pimMJmoHzYKftc0r0Wx74bIVYh%2FbEoFPMN2pS14%3D";
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDopiR2ghEKg32qYSdS1ZdtKwPdl722WOhb5kRrEyO4olI5Uii8Kb7YgmlcAoTlmfgJlHnc%2FN9WWOs7W%2BlTNHHGDcSPhHbo229%2Bx3%2FSVofdTczhdLtn9sPg9c%2FCtxss110BYIw7%2F3oUsBDDfuUMjtJKFXtn2pvOXQFyb6nfetg4C1IqQf4%2Fa1PDggAxlPoOaHgkUsZc6uCSt7w%2FEM1TiIhptYd5Se7ZlJcfOtPSgJuRG26Yg9OUjB0woZ%2BF9cdwvCw%2FjDBTmng7%2BgjWbcwCewsJqEOMECg3vZ56Fe7cYJIwweX0kfCm0GUvEOnoVVDMFYXAp1fjircZw1PegCnoSZn8QcVwFFz54MoF2PZS8SG0ojEI1BBPD05%2BaQz1llImFWJvPxkroPMgSUHRZ%2BNmcgQ3Xzpk8273wo3udYajDV2t5yLsai%2Fm2Yswv5zIB6lQMdhDJK0d5ya2y9Y21UGnFp7S1sNQVH3%2Bs4Y4J7QqPDgBr3B8bDO6ZUtGOlMXMWW3hHnh0oh%2BM6ZGBBHcfq4eTuqp0%3D";
         window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDgawKGMW/pfildkp/JdO8U0bjQN/nPcG7rcWUzCyOuSQnRBhIslesgbct3Bj8Oy0FnsaLx4sXctMDWz2XSnCaNFmE8eJA9O7+Uy+zRmHeEE8fFptTsN+zIB3W1o5/6NKjGMo1CQMqXxSQOQ0G4ruh7LmNF29qRGvMdGWbi1bLjCLUsfwlGObUo0s13H2RYJnrsCCr2r69jHe36xTjaebda0QCEbnueYdNqLYMv51YGGF1bN41SP3Csfvdj9Pb3w+NKuyrll86DanO+yhgiUPe0pZVqRHP+aWR0s8yNDebq4fsJSE7zAXN+Jkd4/q85o+SJJeAYY3Yz5JKgBOe6VCYnc+IXl7p5X8X0adG1HtjjdijoYATbN9Ck4hZrQqN9Di+kPhdLmd/bEsQ7nBi3NuMpNV5doXqyUhs0Au9hPpCcdzI4FMdiezq7CON2SG0rSo84/eluZEySvFevabiv2xFvyNZ76xOdvSWZ6iLV3yJ+caHt00pimMJmoHzYKftc0r0Wx74bIVYh/bEoFPMN2pS14=";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDopiR2ghEKg32qYSdS1ZdtKwPdl722WOhb5kRrEyO4olI5Uii8Kb7YgmlcAoTlmfgJlHnc/N9WWOs7W+lTNHHGDcSPhHbo229+x3/SVofdTczhdLtn9sPg9c/Ctxss110BYIw7/3oUsBDDfuUMjtJKFXtn2pvOXQFyb6nfetg4C1IqQf4/a1PDggAxlPoOaHgkUsZc6uCSt7w/EM1TiIhptYd5Se7ZlJcfOtPSgJuRG26Yg9OUjB0woZ+F9cdwvCw/jDBTmng7+gjWbcwCewsJqEOMECg3vZ56Fe7cYJIwweX0kfCm0GUvEOnoVVDMFYXAp1fjircZw1PegCnoSZn8QcVwFFz54MoF2PZS8SG0ojEI1BBPD05+aQz1llImFWJvPxkroPMgSUHRZ+NmcgQ3Xzpk8273wo3udYajDV2t5yLsai/m2Yswv5zIB6lQMdhDJK0d5ya2y9Y21UGnFp7S1sNQVH3+s4Y4J7QqPDgBr3B8bDO6ZUtGOlMXMWW3hHnh0oh+M6ZGBBHcfq4eTuqp0=";
     </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
+<script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
