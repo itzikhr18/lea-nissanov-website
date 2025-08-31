@@ -61,14 +61,20 @@
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
+        /*
+         * Reset the logo placeholder styling so that the logo itself is shown
+         * without an enforced white background or border. The container simply
+         * wraps the image and provides bottom margin for spacing. The image
+         * inside the placeholder will scale responsively.
+         */
         .logo-placeholder {
-            width: 200px;
-            height: 150px;
-            background-color: #ffffff;
-            border: 2px solid #d4af37;
-            border-radius: 15px;
             display: inline-block;
             margin-bottom: 20px;
+        }
+        .logo-placeholder img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
         .card-hover {
             transition: all 0.3s ease;
@@ -199,7 +205,11 @@
 <!-- Header Section -->
 <header class="gradient-bg text-white py-16">
 <div class="container mx-auto px-4 text-center">
-<div class="logo-placeholder mx-auto"></div>
+        <!-- Logo in header -->
+        <!-- Logo container -->
+        <div class="logo-placeholder mx-auto mb-4">
+            <img src="logo.jpg" alt="לאה ניסנוב - יועצת משכנתאות" class="mx-auto w-48 h-auto" />
+        </div>
 <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 לאה ניסנוב - יועצת משכנתאות בכירה
             </h1>
@@ -556,7 +566,9 @@
 <footer class="gradient-bg text-white py-12">
 <div class="container mx-auto px-4">
 <div class="text-center mb-8">
-<div class="logo-placeholder mx-auto"><img alt="לאה ניסנוב - יועצת משכנתאות" class="mx-auto w-48 h-auto rounded-lg" src="logo.jpg"/></div>
+        <div class="logo-placeholder mx-auto mb-4">
+            <img src="logo.jpg" alt="לאה ניסנוב - יועצת משכנתאות" class="mx-auto w-48 h-auto" />
+        </div>
 <h3 class="text-2xl font-bold mb-4">לאה ניסנוב - יועצת משכנתאות בכירה</h3>
 <p class="text-lg gold-gradient mb-6">ייעוץ מקצועי ואישי לכל לקוח ולקוחה</p>
 </div>
